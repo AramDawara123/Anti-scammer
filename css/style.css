@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* past op alles aan */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 1.4;
+}
+
+/* width of the scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: purple;
+}
+
+/* Body general styling */
+body {
+    font-family: "Poppins", sans-serif;
+    color: black;
+    background-color: plum;
+    max-width: 100%;
+}
+
+/* START UNIVERSAL HEADER */
+
+/* header bg color & spacing */
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(white 80%, plum);
+}
+
+.header-nav img {
+    margin-bottom: 2rem;
+}
+
+/* styling for the a inside header-nav */
+.nav-links a {
+    padding: 0.5rem;
+    border-radius: 20px;
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.nav-links a:hover {
+    background-color: rgb(190, 190, 190);
+}
+
+/* added extra spacing between the nav-links */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* when @media lower then px value do this : */
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        margin-block: 0.5rem;
+        padding-bottom: 5rem;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+/* END UNIVERSAL HEADER */
+
+/* START UNIVERSAL FOOTER */
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(plum, white 10%);
+}
+
+.logo-holder {
+    margin-top: 1rem;
+}
+
+/* makes it center and a column */
+.social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* removes basic style and added it to be a row and some spacing */
+.socials-link {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    padding-block: 2rem;
+}
+
+/* the icons size and transition time */
+.socials-link img {
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+/* makes the image 1.2x bigger when on hover */
+.socials-link img:hover {
+    transform: scale(1.2);
+}
+
+/* END UNIVERSAL FOOTER */
+
+
+/* START index.html */
+
+/* timers styling */
+.timer {
+    margin-block: 10px;
+    font-size: 64px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* spacing and background for the telephone section */
+.top-main {
+    display: flex;
+    justify-content: space-evenly;
+    padding-block: 3rem;
+    align-items: center;
+    background-image: linear-gradient( plum, #6f9dff, #6f9dff, plum);
+}
+
+/* container for the text */
+.acties {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+/* added some margin */
+.acties h2 {
+    margin: 10px 0;
+}
+
+/* made the text row instead of column */
+.product-price-discount {
+    display: flex;
+    align-items: center;
+	font-size: 22px;
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+/* line for past price */
+.product-price-discount p.line-through {
+	text-decoration: line-through;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #a5a5a5;
+}
+
+/* inside the container for the text btn */
+.claim-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #5a87e7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 350ms;
+    transform-origin: 50% 5em;
+    animation: wiggle 2s linear infinite;
+}
+
+.claim-btn:hover {
+    background-color: #d73fc7;
+}
+
+.horizontal {
+    text-align: center;
+}
+
+.logos-slide img {
+    height: 50px;
+    margin-inline: 3rem;
+}
+
+.logos {
+    overflow: hidden;
+    padding: 2rem 0;
+    white-space: nowrap;
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+}
+
+/* animation for the claim-btn wiggle */
+@keyframes wiggle {
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%,
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+/* animation for the sliding images */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* h1 in faq in het midden zetten */
+.faq h1 {
+    text-align: center;
+}
+
+/* the faq behavior and btn */
+.faq details {
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+/* inside the detail design */
+.faq summary {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5em 1.3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* adds the + in the right side of the faq */
+.faq summary:after {
+    content: "\002B";
+}
+
+/* when open apply this */
+.faq details[open] summary {
+    border-bottom: 1px solid gray;
+    margin-bottom: 0.5em;
+}
+
+/* changes the + into a x when opened */
+.faq details[open] summary:after {
+    content: "\00D7";
+}
+
+/* when open apply this */
+.faq details[open] p {
+    padding: 0.5em 1em;
+}
+
+.faq a 
+{
+    color: white;
+}
+
+.iphone-image-newsletter
+{
+    margin: 0 0 1rem 0;
+}
+
+.newsletter {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .newsletter {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center align text within .newsletter */
+    }
+}
+
+@media (max-width: 767px) {
+    .holder-input-email {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .input-email {
+        width: 100%; 
+        max-width: none; 
+        margin-bottom: 10px; 
+    }
+}
+
+
+/* Add some padding and a grey background color to containers */
+.give-container {
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+/* holder for the inputs */
+.info-container {
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* alignment of the input questions */
+.holder-input-email {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* added spacing between the inputs */
+.input-email {
+    border-radius: 10px;
+    max-width: 40%;
+}
+
+.holder-btn-email {
+    display: flex;
+    justify-content: center;
+}
+
+/* btn for the name/email input */
+.input-btn {
+    cursor: pointer;
+    max-width: 60%;
+    border-radius: 10px;
+    transition: 250ms;
+}
+
+#challange {
+    cursor: pointer;
+}
+
+/* when @media lower then px value do this : */
+
+@media (max-width: 768px) {
+    .top-main {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    /* makes the input column */
+    .holder-input-email {
+        flex-direction: column;
+    }
+    /* makes it full width */
+    .input-email {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer {
+        font-size: 32px;
+    }
+}
+
+/* END index.html */
+
+
+/* START over-ons.html */
+
+/* makes 2 sides */
+.main-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* added some margin to both sides evenly */
+.header-left,
+.header-right {
+    margin-block: 1rem;
+}
+
+.header-left {
+    text-align: center;
+}
+
+.header-left h1 {
+    margin: 0 0 10px 0;
+}
+
+/* makes the right side centered and a max size it can be */
+.header-right {
+    text-align: center;
+    max-height: 100px;
+}
+
+/* makes the img take 60% of the room in the header.right holder */
+.header-right img {
+    width: 60%;
+}
+
+/* container margin and text center */
+.overons {
+    margin: 80px;
+    text-align: center;
+}
+
+.overons h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* END over-ons */
+
+
+/* START contactons.html */
+
+/* Style the input elements and the submit button */
+.input-email, .input-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+.input-btn {
+    border-radius: 10x;
+    background-color: #6f9dff;
+    color: white;
+}
+
+/* add hover to the button  */
+.input-btn:hover {
+    background-color: #d73fc7;
+}
+
+.container-contact {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+/* Card Styling */
+.card {
+    width: 70%;
+    padding: 40px 50px;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+/* Card Header Styling */
+.card h2 {
+    color: #333333;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    grid-template-areas: 
+        "fname lname"
+        "email phone"
+        "message message"
+        "button button";
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group:nth-child(1) {
+    grid-area: fname;
+}
+
+.form-group:nth-child(2) {
+    grid-area: lname;
+}
+
+.form-group:nth-child(3) {
+    grid-area: email;
+}
+
+.form-group:nth-child(4) {
+    grid-area: phone;
+}
+
+.form-group-msg {
+    grid-area: message;
+}
+
+.form-group-btn {
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card input, .card textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    background: #f9f9f9;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333333;
+    transition: all 0.3s ease;
+}
+
+.card input:focus, .card textarea:focus {
+    border-color: #666666;
+    box-shadow: 0 0 5px rgba(102, 102, 102, 0.5);
+}
+
+.card textarea {
+    height: 150px;
+    resize: none; 
+}
+
+.card label {
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    background: #ffffff;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.card button {
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 900px) {
+    .container-contact { 
+        padding: 30px;
+    }
+
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 28px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "fname"
+            "lname"
+            "email"
+            "phone"
+            "message"
+            "button";
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container-contact {
+        padding: 20px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .card input, .card textarea {
+        width: calc(100% - 16px);
+        padding: 8px;
+    }
+
+    .card button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .main-contact {
+        margin: 0 0 0.5rem 0;
+    }
+}
+
+/* END contactons.html */
+
+
+/* START iphone.html */
+
+.credit-input-holder {
+    display: flex;
+    justify-content: center;
+}
+
+.credit-card-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.input-group {
+    margin-block: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.verstuur-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.verstuur-button:hover {
+    background-color: #0056b3;
+}
+
+/* END iphone.html */
+
+/* START data.html */
+
+.data-title {
+    text-align: center;
+    margin-block: 1.5rem;
+}
+
+.data-header-h2, 
+.data-header-h2 > h2, 
+.credit-border > h2 {
+    text-align: center;
+    margin-block: 0.5rem;
+}
+
+.data-row-holder-2 {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 3px solid black;
+}
+
+.credit-border {
+    margin-top: 1rem;
+    border-bottom: 3px solid black;
+}
+
+.data-row-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.data-row-2 > div {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .data-row-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .data-row-2 > div {
+        gap: 5px;
+    }
+
+    #news-lname, 
+    #contact-msg, 
+    #credit-expdate {
+        margin-bottom: 1rem;
+    }
+    
+    .data-row-holder-2 {
+        flex-direction: column;
+        border: none;
+    }
+
+    .data-header-h2 {
+        border-bottom: 3px solid black;
+    }
+}
+
+@media (max-width: 376px) {
+    .credit-input-holder {
+        margin-inline: 1rem;
+    }
+}
+
